@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Larissa Raiane da Silva — Designer Instrucional, Educação Corporativa e experiências digitais de aprendizagem.">
+  <title>Larissa Raiane da Silva | Designer Instrucional</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg: #08111f;
+      --surface: #101c2d; 
+      --surface-2: #142238;
+      --border: #24354d;
+      --text: #f7f9fc;
+      --muted: #9eacc0;
+      --accent: #38bdf8;
+      --accent-2: #7dd3fc;
+      --success: #34d399;
+      --warning: #fbbf24;
+      --shadow: 0 24px 70px rgba(0,0,0,.28);
+      --radius: 18px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(56,189,248,.10), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(125,211,252,.07), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    .section { padding: 100px 0; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--accent-2); font-size: .78rem; font-weight: 800;
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+    .section-heading { max-width: 760px; margin-bottom: 44px; }
+    .section-heading h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -.04em; margin-bottom: 14px; }
+    .section-heading p { color: var(--muted); font-size: 1.05rem; }
+    .accent { color: var(--accent); }
+
+    /* HEADER */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(8,17,31,.84); backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(36,53,77,.8);
+    }
+    nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; flex-direction: column; line-height: 1.15; }
+    .brand strong { font-size: 1rem; }
+    .brand span { font-size: .72rem; color: var(--muted); margin-top: 4px; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .88rem; font-weight: 600; transition: .2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-cta { border: 1px solid var(--border); padding: 9px 14px; border-radius: 10px; }
+    .nav-cta:hover { border-color: var(--accent); }
+
+    /* HERO */
+    .hero { padding: 110px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 70px; align-items: center; }
+    .hero h1 { font-size: clamp(2.7rem, 6vw, 5.1rem); line-height: 1.02; letter-spacing: -.065em; max-width: 850px; }
+    .hero h1 span { color: var(--accent); }
+    .hero-lead { font-size: 1.12rem; color: var(--muted); max-width: 700px; margin: 25px 0 30px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 13px 18px; border-radius: 11px;
+      font-weight: 700; font-size: .9rem; border: 1px solid transparent; cursor: pointer; transition: .2s;
+    }
+    .btn-primary { background: var(--accent); color: #03111c; }
+    .btn-primary:hover { transform: translateY(-2px); background: var(--accent-2); }
+    .btn-secondary { border-color: var(--border); background: rgba(16,28,45,.65); color: var(--text); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-proof {
+      border: 1px solid var(--border); background: linear-gradient(145deg, rgba(20,34,56,.92), rgba(16,28,45,.7));
+      border-radius: 24px; padding: 25px; box-shadow: var(--shadow);
+    }
+    .proof-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 800; }
+    .proof-title { font-size: 1.45rem; font-weight: 800; margin: 10px 0 20px; }
+    .proof-flow { display: grid; gap: 10px; }
+    .flow-item { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: rgba(8,17,31,.45); }
+    .flow-number { width: 30px; height: 30px; border-radius: 99px; display: grid; place-items: center; background: rgba(56,189,248,.12); color: var(--accent); font-weight: 800; font-size: .78rem; }
+    .flow-item strong { font-size: .82rem; }
+    .flow-item small { display: block; color: var(--muted); font-size: .7rem; }
+
+    .logic-strip {
+      margin-top: 45px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 15px;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; color: var(--muted); font-size: .82rem;
+    }
+    .logic-strip b { color: var(--text); }
+    .logic-strip i { color: var(--accent); font-style: normal; }
+
+    /* ABOUT */
+    .about-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; }
+    .about-main, .about-side { border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); padding: 30px; }
+    .about-main h3 { font-size: 1.5rem; margin-bottom: 14px; }
+    .about-main p { color: var(--muted); margin-bottom: 15px; }
+    .about-main p:last-child { margin-bottom: 0; }
+    .about-side { display: grid; gap: 12px; }
+    .mini-card { border: 1px solid var(--border); background: rgba(8,17,31,.35); border-radius: 13px; padding: 18px; }
+    .mini-card strong { display: block; margin-bottom: 5px; font-size: .9rem; }
+    .mini-card span { color: var(--muted); font-size: .82rem; }
+
+    /* PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .process-card { padding: 23px; border: 1px solid var(--border); background: var(--surface); border-radius: 15px; }
+    .process-card .num { color: var(--accent); font-weight: 800; font-size: .75rem; }
+    .process-card h3 { font-size: 1rem; margin: 9px 0 6px; }
+    .process-card p { font-size: .83rem; color: var(--muted); }
+
+    /* PROJECTS & CASES */
+    .project-list { display: grid; gap: 26px; }
+    .project {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 30px;
+      padding: 28px; border: 1px solid var(--border); background: linear-gradient(145deg, rgba(16,28,45,.96), rgba(16,28,45,.72));
+      border-radius: 20px; transition: .25s; overflow: hidden;
+    }
+    .project:hover { border-color: #3d5a7c; transform: translateY(-2px); }
+    .project:nth-child(even) { grid-template-columns: 1.2fr 1fr; }
+    .project:nth-child(even) .project-cover { order: 2; }
+    
+    .project-info { display: flex; flex-direction: column; justify-content: center; }
+    .project-kicker { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-bottom: 12px; }
+    .badge { font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; padding: 5px 8px; border-radius: 999px; background: rgba(56,189,248,.1); color: var(--accent); border: 1px solid rgba(56,189,248,.18); }
+    .badge.green { color: var(--success); background: rgba(52,211,153,.08); border-color: rgba(52,211,153,.18); }
+    .badge.orange { color: var(--warning); background: rgba(251,191,36,.08); border-color: rgba(251,191,36,.18); }
+    .project h3 { font-size: 1.55rem; line-height: 1.2; margin-bottom: 12px; }
+    .project-desc { color: var(--muted); font-size: .9rem; margin-bottom: 18px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+    .tag { font-size: .68rem; color: #c5d0df; border: 1px solid var(--border); padding: 5px 8px; border-radius: 7px; }
+    
+    /* PROJECT COVER IMAGE */
+    .project-cover {
+      position: relative;
+      min-height: 340px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0d192a;
+    }
+    .project-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .3s ease;
+    }
+    .project:hover .project-cover img { transform: scale(1.03); }
+    .cover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,17,31,0.92) 0%, rgba(8,17,31,0.3) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+    .cover-title { font-size: .85rem; font-weight: 700; color: var(--accent-2); text-transform: uppercase; letter-spacing: .08em; }
+    .cover-subtitle { font-size: .78rem; color: var(--text); }
+    .project-footer { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+
+    /* COMPETENCIES */
+    .competencies { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .competency { padding: 25px; border: 1px solid var(--border); background: var(--surface); border-radius: 16px; }
+    .competency h3 { font-size: 1.15rem; margin-bottom: 15px; color: var(--accent); }
+    .competency ul { list-style: none; padding: 0; display: grid; gap: 8px; }
+    .competency li { font-size: .88rem; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+    .competency li::before { content: "•"; color: var(--accent); font-weight: bold; }
+
+    /* CONTACT */
+    .contact { border: 1px solid var(--border); border-radius: 24px; padding: 45px; background: linear-gradient(135deg, rgba(56,189,248,.09), rgba(16,28,45,.8)); }
+    .contact h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; max-width: 650px; line-height: 1.1; }
+    .contact p { color: var(--muted); max-width: 650px; margin: 14px 0 25px; }
+
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: .75rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; align-items: center; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* MODAL CASE STRUCTURE */
+    .modal { position: fixed; inset: 0; z-index: 100; display: none; padding: 20px; background: rgba(2,8,18,.85); backdrop-filter: blur(10px); overflow: auto; }
+    .modal.open { display: flex; align-items: flex-start; justify-content: center; }
+    .modal-content { width: min(920px, 100%); margin: 30px auto; background: #0e1a2b; border: 1px solid var(--border); border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+    .modal-header { padding: 28px 30px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; gap: 20px; }
+    .modal-header h2 { font-size: 1.6rem; line-height: 1.2; }
+    .close { background: none; border: 0; color: var(--muted); cursor: pointer; padding: 5px; }
+    .close:hover { color: var(--text); }
+    .modal-body { padding: 30px; }
+
+    /* CASE STEPS */
+    .case-step {
+      margin-bottom: 28px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(16,28,45,.5);
+    }
+    .case-step-num {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 6px;
+    }
+    .case-step h3 {
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .case-step p {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .result-box {
+      border: 1px solid rgba(52,211,153,.3);
+      background: rgba(52,211,153,.08);
+      padding: 22px;
+      border-radius: 14px;
+      color: #c8f9e5;
+    }
+    .result-box h3 {
+      color: var(--success);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .modal-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+    @media(max-width: 900px) {
+      .hero-grid, .about-grid, .project, .project:nth-child(even) { grid-template-columns: 1fr; }
+      .project:nth-child(even) .project-cover { order: 0; }
+      .project-cover { min-height: 240px; }
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(max-width: 680px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .section { padding: 72px 0; }
+      .nav-links { display: none; }
+      .hero { padding-top: 75px; }
+      .process-grid, .competencies { grid-template-columns: 1fr; }
+      .modal-header, .modal-body { padding: 22px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a class="brand" href="#inicio" aria-label="Ir para o início">
+      <strong>Larissa Raiane da Silva</strong>
+      <span>Designer Instrucional · Educação Corporativa</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#processo">Processo DI</a></li>
+      <li><a href="#projetos">Cases & Treinamentos</a></li>
+      <li><a href="#competencias">Competências</a></li>
+      <li><a class="nav-cta" href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Design Instrucional + Educação Corporativa</div>
+          <h1>Transformo <span>problemas de negócio</span> em experiências de aprendizagem.</h1>
+          <p class="hero-lead">
+            Desenvolvo soluções educacionais com diagnóstico preciso, objetivos mensuráveis,
+            arquitetura pedagógica, cenários práticos e experiências digitais interativas.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#projetos">Explorar Cases <i data-lucide="arrow-right"></i></a>
+            <a class="btn btn-secondary" href="#processo">Ver Processo de DI <i data-lucide="workflow"></i></a>
+          </div>
+        </div>
+
+        <aside class="hero-proof" aria-label="Meu processo de design instrucional">
+          <span class="proof-label">Metodologia de DI</span>
+          <div class="proof-title">Estrutura de Case</div>
+          <div class="proof-flow">
+            <div class="flow-item"><div class="flow-number">01</div><div><strong>Problema de Negócio</strong><small>Gargalo ou falha operacional</small></div></div>
+            <div class="flow-item"><div class="flow-number">02</div><div><strong>Diagnóstico & Objetivo</strong><small>Comportamento esperado</small></div></div>
+            <div class="flow-item"><div class="flow-number">03</div><div><strong>Solução Instrucional</strong><small>Estratégia + Módulos + Cenários</small></div></div>
+            <div class="flow-item"><div class="flow-number">04</div><div><strong>Resultado Esperado</strong><small>Impacto mensurável no negócio</small></div></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="logic-strip">
+        <b>Problema de Negócio</b><i>→</i><b>Diagnóstico</b><i>→</i><b>Objetivo Prático</b><i>→</i><b>Solução Instrucional</b><i>→</i><b>Por que a Estratégia?</b><i>→</i><b>Resultado Esperado</b>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Sobre</div>
+        <h2>Pedagogia aplicada a <span class="accent">problemas corporativos.</span></h2>
+        <p>Meu foco não é criar treinamento apenas bonito. É construir experiências que façam sentido para o negócio e para quem precisa aplicar o que aprendeu.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-main">
+          <h3>Meu posicionamento</h3>
+          <p>
+            Sou Designer Instrucional com formação em Pedagogia e foco em Educação Corporativa,
+            T&D e experiências digitais de aprendizagem.
+          </p>
+          <p>
+            Estruturo soluções a partir do diagnóstico de problemas de desempenho, transformando necessidades corporativas em objetivos práticos, estratégias instrucionais, roteiros, atividades e produtos digitais.
+          </p>
+          <p>
+            Nos cases apresentados aqui, demonstro o raciocínio completo de DI: do problema da empresa ao resultado esperado para o negócio, alinhando pedagogia e execução técnica (HTML, CSS e JS).
+          </p>
+        </article>
+
+        <div class="about-side">
+          <div class="mini-card"><strong>Diagnóstico</strong><span>Mapeamento do problema real e da necessidade de aprendizagem.</span></div>
+          <div class="mini-card"><strong>Arquitetura</strong><span>Objetivos mensuráveis, conteúdos, sequência e prática deliberada.</span></div>
+          <div class="mini-card"><strong>Estratégia</strong><span>Cenários, tomada de decisão e feedback orientativo.</span></div>
+          <div class="mini-card"><strong>Impacto</strong><span>Foco na mudança de comportamento e melhoria de indicadores.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Processo de Design Instrucional</div>
+        <h2>Uma solução começa antes da primeira tela.</h2>
+        <p>O processo organiza a tomada de decisão e evita transformar qualquer problema de desempenho em “mais um curso”.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card"><span class="num">01</span><h3>Diagnóstico do Problema</h3><p>Identificação das perdas da empresa, contexto, causas e comportamento desejado.</p></article>
+        <article class="process-card"><span class="num">02</span><h3>Análise do Público</h3><p>Perfil dos colaboradores, rotina, barreiras e ambiente real de aplicação.</p></article>
+        <article class="process-card"><span class="num">03</span><h3>Objetivos Instrucionais</h3><p>Definição de competências operacionais e comportamentos observáveis.</p></article>
+        <article class="process-card"><span class="num">04</span><h3>Estratégia & Arquitetura</h3><p>Escolha de formato, cenários, simulações, jornada e tipo de feedback.</p></article>
+        <article class="process-card"><span class="num">05</span><h3>Desenvolvimento</h3><p>Roteirização, prototipagem e implementação do treinamento interativo.</p></article>
+        <article class="process-card"><span class="num">06</span><h3>Avaliação de Impacto</h3><p>Medição da eficácia e estimativa de retorno/melhoria para a empresa.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Cases & Treinamentos</div>
+        <h2>Quatro desafios corporativos. <span class="accent">Quatro Cases estruturados.</span></h2>
+        <p>Projetos apresentados em formato de Case de Design Instrucional, detalhando o problema da empresa, a estratégia escolhida e os resultados esperados.</p>
+      </div>
+
+      <div class="project-list">
+
+        <!-- CASE 1: LGPD -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Compliance</span>
+            </div>
+            <small>Gargalo ou falha operacional</small></div></div>
+            <div class="flow-item"><div class="flow-number">02</div><div><strong>Diagnóstico & Objetivo</strong><small>Comportamento esperado</small></div></div>
+            <div class="flow-item"><div class="flow-number">03</div><div><strong>Solução Instrucional</strong><small>Estratégia + Módulos + Cenários</small></div></div>
+            <div class="flow-item"><div class="flow-number">04</div><div><strong>Resultado Esperado</strong><small>Impacto mensurável no negócio</small></div></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="logic-strip">
+        <b>Problema de Negócio</b><i>→</i><b>Diagnóstico</b><i>→</i><b>Objetivo Prático</b><i>→</i><b>Solução Instrucional</b><i>→</i><b>Por que a Estratégia?</b><i>→</i><b>Resultado Esperado</b>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Sobre</div>
+        <h2>Pedagogia aplicada a <span class="accent">problemas corporativos.</span></h2>
+        <p>Meu foco não é criar treinamento apenas bonito. É construir experiências que façam sentido para o negócio e para quem precisa aplicar o que aprendeu.</p>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-main">
+          <h3>Meu posicionamento</h3>
+          <p>
+            Sou Designer Instrucional com formação em Pedagogia e foco em Educação Corporativa,
+            T&D e experiências digitais de aprendizagem.
+          </p>
+          <p>
+            Estruturo soluções a partir do diagnóstico de problemas de desempenho, transformando necessidades corporativas em objetivos práticos, estratégias instrucionais, roteiros, atividades e produtos digitais.
+          </p>
+          <p>
+            Nos cases apresentados aqui, demonstro o raciocínio completo de DI: do problema da empresa ao resultado esperado para o negócio, alinhando pedagogia e execução técnica (HTML, CSS e JS).
+          </p>
+        </article>
+
+        <div class="about-side">
+          <div class="mini-card"><strong>Diagnóstico</strong><span>Mapeamento do problema real e da necessidade de aprendizagem.</span></div>
+          <div class="mini-card"><strong>Arquitetura</strong><span>Objetivos mensuráveis, conteúdos, sequência e prática deliberada.</span></div>
+          <div class="mini-card"><strong>Estratégia</strong><span>Cenários, tomada de decisão e feedback orientativo.</span></div>
+          <div class="mini-card"><strong>Impacto</strong><span>Foco na mudança de comportamento e melhoria de indicadores.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="processo" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Processo de Design Instrucional</div>
+        <h2>Uma solução começa antes da primeira tela.</h2>
+        <p>O processo organiza a tomada de decisão e evita transformar qualquer problema de desempenho em “mais um curso”.</p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-card"><span class="num">01</span><h3>Diagnóstico do Problema</h3><p>Identificação das perdas da empresa, contexto, causas e comportamento desejado.</p></article>
+        <article class="process-card"><span class="num">02</span><h3>Análise do Público</h3><p>Perfil dos colaboradores, rotina, barreiras e ambiente real de aplicação.</p></article>
+        <article class="process-card"><span class="num">03</span><h3>Objetivos Instrucionais</h3><p>Definição de competências operacionais e comportamentos observáveis.</p></article>
+        <article class="process-card"><span class="num">04</span><h3>Estratégia & Arquitetura</h3><p>Escolha de formato, cenários, simulações, jornada e tipo de feedback.</p></article>
+        <article class="process-card"><span class="num">05</span><h3>Desenvolvimento</h3><p>Roteirização, prototipagem e implementação do treinamento interativo.</p></article>
+        <article class="process-card"><span class="num">06</span><h3>Avaliação de Impacto</h3><p>Medição da eficácia e estimativa de retorno/melhoria para a empresa.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Cases & Treinamentos</div>
+        <h2>Quatro desafios corporativos. <span class="accent">Quatro Cases estruturados.</span></h2>
+        <p>Projetos apresentados em formato de Case de Design Instrucional, detalhando o problema da empresa, a estratégia escolhida e os resultados esperados.</p>
+      </div>
+
+      <div class="project-list">
+
+        <!-- CASE 1: LGPD -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Compliance</span>
+            </div>
+            <h3>LGPD & Cibersegurança Corporativa</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Aumento do risco de multas e sanções por compartilhamento inadequado de dados e falta de postura preventiva contra ataques de cibersegurança.
+            </p>
+            <div class="tags">
+              <span class="tag">Simulação de Dilemas</span>
+              <span class="tag">Tomada de Decisão</span>
+              <span class="tag">Prevenção de Riscos</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('lgpd')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cibersegurança e Proteção de Dados">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 01 — Compliance</span>
+              <span class="cover-subtitle">LGPD & Cibersegurança na Prática</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 2: ONBOARDING -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Integração</span>
+            </div>
+            <h3>Onboarding Digital e Cultura Organizacional</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Alto tempo de ramp-up dos novos colaboradores e perda de produtividade inicial por falta de alinhamento com os processos e valores da cultura interna.
+            </p>
+            <div class="tags">
+              <span class="tag">Jornada do Colaborador</span>
+              <span class="tag">Gamificação Leve</span>
+              <span class="tag">Ramp-up Rápido</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('onboarding')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Onboarding e Integração de Equipe">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 02 — Integração</span>
+              <span class="cover-subtitle">Jornada de Onboarding Interativa</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 3: ATENDIMENTO AO CLIENTE -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Atendimento</span>
+            </div>
+            <h3>Atendimento ao Cliente & Resolução de Conflitos</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Queda nos índices de satisfação (NPS) e alto índice de escalonamento desnecessário por falha na comunicação empática e desescalada de conflitos.
+            </p>
+            <div class="tags">
+              <span class="tag">Simulação de Diálogo</span>
+              <span class="tag">Comunicação Empática</span>
+              <span class="tag">Redução de Reclamações</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('atendimento')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=800&q=80" alt="Atendimento ao Cliente e Comunicação">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 03 — Operacional</span>
+              <span class="cover-subtitle">Treinamento de Atendimento & Crises</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 4: LIDERANÇA -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Gestão</span>
+            </div>
+            <h3>Liderança & Gestão de Feedback Contínuo</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Desengajamento de equipes e rotatividade (turnover) causados por lideranças despreparadas para aplicar feedbacks construtivos no dia a dia.
+            </p>
+            <div class="tags">
+              <span class="tag">Estudos de Caso</span>
+              <span class="tag">Roleplay Orientado</span>
+              <span class="tag">Desenvolvimento de Liderança</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('lideranca')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Liderança e Feedback">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 04 — Liderança</span>
+              <span class="cover-subtitle">Práticas de Feedback & Gestão</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Competências Técnicas & Pedagógicas</div>
+        <h2>Habilidades aplicadas ao <span class="accent">Design Instrucional.</span></h2>
+        <p>Domínio do ciclo completo de T&D, alinhando metodologias pedagógicas com tecnologias web modernas.</p>
+      </div>
+
+      <div class="competencies">
+        <div class="competency">
+          <h3>Design Instrucional & Pedagogia</h3>
+          <ul>
+            <li>Diagnóstico de necessidades de aprendizagem (ADDIE / SAM)</li>
+            <li>Elaboração de objetivos segundo a Taxonomia de Bloom</li>
+            <li>Mapeamento de perfil e jornada de aprendizagem</li>
+            <li>Roteirização e Storyboarding para e-learning</li>
+            <li>Elaboração de avaliações alinhadas a objetivos práticos</li>
+          </ul>
+        </div>
+
+        <div class="competency">
+          <h3>Tecnologia & Execução</h3>
+          <ul>
+            <li>Desenvolvimento de interfaces de aprendizagem (HTML, CSS, JS)</li>
+            <li>Design responsivo e acessibilidade web</li>
+            <li>Ferramentas de autoria e prototipagem interativa</li>
+            <li>Integração de ícones, mídia e elementos visuais</li>
+            <li>Estruturação e simulação de trilhas interativas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+    <div class="container">
+      <div class="contact">
+        <h2>Vamos construir experiências de aprendizagem com impacto real?</h2>
+        <p>Estou disponível para projetos de Design Instrucional, consultoria educacional e desenvolvimento de conteúdos corporativos.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:larissa.raiane@email.com"><i data-lucide="mail"></i> Entrar em Contato</a>
+          <a class="btn btn-secondary" href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© Larissa Raiane da Silva — Designer Instrucional. Todos os direitos reservados.</div>
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#processo">Processo</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL CASE DETAILS -->
+<div id="caseModal" class="modal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalTitle">Título do Case</h2>
+      <button class="close" onclick="closeModal()" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- O conteúdo do case e botões de ação são injetados via JS -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Inicialização dos ícones Lucide
+  lucide.createIcons();
+
+  // Dados dos Cases para os Modais
+  const casesData = {
+    lgpd: {
+      title: "Case 01: LGPD & Cibersegurança Corporativa",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>O aumento de incidentes de segurança e do manuseio inadequado de dados de clientes colocava a organização em risco direto de sanções financeiras e danos à reputação.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Treinamentos tradicionais e expositivos sobre legislação resultavam em baixa retenção e nenhuma alteração na rotina operacional. O objetivo foi mudar o comportamento prático diante de situações reais de risco.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Criação de um módulo de simulação interativa com tomadas de decisão baseadas em dilemas cotidianos (phishing, descarte de arquivos e compartilhamento de senhas), com feedback orientativo imediato.</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Redução de acessos e manuseios indevidos, além do aumento na identificação e notificação rápida de tentativas de ataques cibernéticos.</p>
+        </div>
+      `
+    },
+    onboarding: {
+      title: "Case 02: Onboarding Digital & Cultura Organizacional",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>Novos contratados demoravam até 60 dias para atingir autonomia básica, gerando sobrecarga em gestores e inconsistência na assimilação da cultura da empresa.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Identificou-se excesso de documentos estáticos e falta de uma trilha contínua e engajadora. O objetivo foi acelerar a integração e padronizar o conhecimento dos pilares estratégicos.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Jornada digital dividida em micro-módulos com elementos gamificados, quizzes de fixação e aplicação de checklist prático de ambientação acompanhado pelo padrinho/mentores.</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Redução do tempo de ramp-up inicial de 60 para 25 dias e aumento da satisfação dos novos colaboradores no período de experiência.</p>
+        </div>
+      `
+    },
+    atendimento: {
+      title: "Case 03: Atendimento ao Cliente & Resolução de Conflitos",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>Crescimento do número de reclamações não resolvidas no primeiro contato e queda no indicador de CSAT/NPS devido à postura defensiva dos atendentes.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Falta de prática em escuta ativa e em técnicas de desescalada de conflitos. O objetivo foi capacitar a equipe a aplicar a comunicação empática em situações de alta pressão.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Simulador de diálogos ramificados, onde cada escolha de fala do atendente impacta diretamente a atitude do cliente fictício, exigindo ajustes de postura em tempo real.</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Aumento da taxa de resolução no primeiro contato (FCR) e melhoria nas notas de avaliação do atendimento prestado.</p>
+        </div>
+      `
+    },
+    lideranca: {
+      title: "Case 04: Liderança & Gestão de Feedback Contínuo",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>Alto índice de turnover em equipes operacionais associado à insatisfação com a liderança imediata e ausência de orientação clara sobre o desempenho.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Líderes encaravam o feedback apenas como um rito formal anual, acumulando insatisfações sem tratá-las na rotina. O objetivo foi institucionalizar a cultura de feedback contínuo.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Trilha com estudos de caso práticos, roteiros estruturados de conversas difíceis e simulação interativa de estruturação de Planos de Desenvolvimento Individual (PDI).</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Redução da rotatividade voluntária, aumento do engajamento nas pesquisas de clima e melhoria na clareza das metas individuais.</p>
+        </div>
+      `
+    }
+  };
+
+  function openModal(caseKey) {
+    const data = casesData[caseKey];
+    if (data) {
+      document.getElementById('modalTitle').innerText = data.title;
+      
+      const actionButtonHtml = `
+        ${data.content}
+        <div class="modal-actions">
+          <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Acessar Projeto na Prática <i data-lucide="external-link"></i>
+          </a>
+          <button class="btn btn-secondary" onclick="closeModal()">Fechar</button>
+        </div>
+      `;
+      
+      document.getElementById('modalBody').innerHTML = actionButtonHtml;
+      document.getElementById('caseModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+="projetos" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Cases & Treinamentos</div>
+        <h2>Quatro desafios corporativos. <span class="accent">Quatro Cases estruturados.</span></h2>
+        <p>Projetos apresentados em formato de Case de Design Instrucional, detalhando o problema da empresa, a estratégia escolhida e os resultados esperados.</p>
+      </div>
+
+      <div class="project-list">
+
+        <!-- CASE 1: LGPD -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Compliance</span>
+            </div>
+            <h3>LGPD & Cibersegurança Corporativa</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Aumento do risco de multas e sanções por compartilhamento inadequado de dados e falta de postura preventiva contra ataques de cibersegurança.
+            </p>
+            <div class="tags">
+              <span class="tag">Simulação de Dilemas</span>
+              <span class="tag">Tomada de Decisão</span>
+              <span class="tag">Prevenção de Riscos</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('lgpd')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="Cibersegurança e Proteção de Dados">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 01 — Compliance</span>
+              <span class="cover-subtitle">LGPD & Cibersegurança na Prática</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 2: ONBOARDING -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Integração</span>
+            </div>
+            <h3>Onboarding Digital e Cultura Organizacional</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Alto tempo de ramp-up dos novos colaboradores e perda de produtividade inicial por falta de alinhamento com os processos e valores da cultura interna.
+            </p>
+            <div class="tags">
+              <span class="tag">Jornada do Colaborador</span>
+              <span class="tag">Gamificação Leve</span>
+              <span class="tag">Ramp-up Rápido</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('onboarding')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Onboarding e Integração de Equipe">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 02 — Integração</span>
+              <span class="cover-subtitle">Jornada de Onboarding Interativa</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 3: ATENDIMENTO AO CLIENTE -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Atendimento</span>
+            </div>
+            <h3>Atendimento ao Cliente & Resolução de Conflitos</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Queda nos índices de satisfação (NPS) e alto índice de escalonamento desnecessário por falha na comunicação empática e desescalada de conflitos.
+            </p>
+            <div class="tags">
+              <span class="tag">Simulação de Diálogo</span>
+              <span class="tag">Comunicação Empática</span>
+              <span class="tag">Redução de Reclamações</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('atendimento')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=800&q=80" alt="Atendimento ao Cliente e Comunicação">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 03 — Operacional</span>
+              <span class="cover-subtitle">Treinamento de Atendimento & Crises</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CASE 4: LIDERANÇA -->
+        <article class="project">
+          <div class="project-info">
+            <div class="project-kicker">
+              <span class="badge orange">Projeto Conceitual</span>
+              <span class="badge green">Gestão</span>
+            </div>
+            <h3>Liderança & Gestão de Feedback Contínuo</h3>
+            <p class="project-desc">
+              <strong>Problema da empresa:</strong> Desengajamento de equipes e rotatividade (turnover) causados por lideranças despreparadas para aplicar feedbacks construtivos no dia a dia.
+            </p>
+            <div class="tags">
+              <span class="tag">Estudos de Caso</span>
+              <span class="tag">Roleplay Orientado</span>
+              <span class="tag">Desenvolvimento de Liderança</span>
+            </div>
+            <div class="project-footer">
+              <button class="btn btn-primary" onclick="openModal('lideranca')">Ver Case Completo <i data-lucide="arrow-up-right"></i></button>
+            </div>
+          </div>
+          <div class="project-cover">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Gestão de Liderança e Feedback">
+            <div class="cover-overlay">
+              <span class="cover-title">Case 04 — Liderança</span>
+              <span class="cover-subtitle">Práticas de Feedback & Gestão</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="competencias" class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Competências Técnicas & Pedagógicas</div>
+        <h2>Habilidades aplicadas ao <span class="accent">Design Instrucional.</span></h2>
+        <p>Domínio do ciclo completo de T&D, alinhando metodologias pedagógicas com tecnologias web modernas.</p>
+      </div>
+
+      <div class="competencies">
+        <div class="competency">
+          <h3>Design Instrucional & Pedagogia</h3>
+          <ul>
+            <li>Diagnóstico de necessidades de aprendizagem (ADDIE / SAM)</li>
+            <li>Elaboração de objetivos segundo a Taxonomia de Bloom</li>
+            <li>Mapeamento de perfil e jornada de aprendizagem</li>
+            <li>Roteirização e Storyboarding para e-learning</li>
+            <li>Elaboração de avaliações alinhadas a objetivos práticos</li>
+          </ul>
+        </div>
+
+        <div class="competency">
+          <h3>Tecnologia & Execução</h3>
+          <ul>
+            <li>Desenvolvimento de interfaces de aprendizagem (HTML, CSS, JS)</li>
+            <li>Design responsivo e acessibilidade web</li>
+            <li>Ferramentas de autoria e prototipagem interativa</li>
+            <li>Integração de ícones, mídia e elementos visuais</li>
+            <li>Estruturação e simulação de trilhas interativas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+    <div class="container">
+      <div class="contact">
+        <h2>Vamos construir experiências de aprendizagem com impacto real?</h2>
+        <p>Estou disponível para projetos de Design Instrucional, consultoria educacional e desenvolvimento de conteúdos corporativos.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:larissa.raiane@email.com"><i data-lucide="mail"></i> Entrar em Contato</a>
+          <a class="btn btn-secondary" href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© Larissa Raiane da Silva — Designer Instrucional. Todos os direitos reservados.</div>
+    <div class="footer-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#processo">Processo</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL CASE DETAILS -->
+<div id="caseModal" class="modal" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 id="modalTitle">Título do Case</h2>
+      <button class="close" onclick="closeModal()" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <!-- O conteúdo do case é injetado via JavaScript -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Inicialização dos ícones Lucide
+  lucide.createIcons();
+
+  // Dados dos Cases para os Modais
+  const casesData = {
+    lgpd: {
+      title: "Case 01: LGPD & Cibersegurança Corporativa",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>O aumento de incidentes de segurança e do manuseio inadequado de dados de clientes colocava a organização em risco direto de sanções financeiras e danos à reputação.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Treinamentos tradicionais e expositivos sobre legislação resultavam em baixa retenção e nenhuma alteração na rotina operacional. O objetivo foi mudar o comportamento prático diante de situações reais de risco.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Criação de um módulo de simulação interativa com tomadas de decisão baseadas em dilemas cotidianos (phishing, descarte de arquivos e compartilhamento de senhas), com feedback orientativo imediato.</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Redução de acessos e manuseios indevidos, além do aumento na identificação e notificação rápida de tentativas de ataques cibernéticos.</p>
+        </div>
+      `
+    },
+    onboarding: {
+      title: "Case 02: Onboarding Digital & Cultura Organizacional",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>Novos contratados demoravam até 60 dias para atingir autonomia básica, gerando sobrecarga em gestores e inconsistência na assimilação da cultura da empresa.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Identificou-se excesso de documentos estáticos e falta de uma trilha contínua e engajadora. O objetivo foi acelerar a integração e padronizar o conhecimento dos pilares estratégicos.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Jornada digital dividida em micro-módulos com elementos gamificados, quizzes de fixação e aplicação de checklist prático de ambientação acompanhado pelo padrinho/mentores.</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Redução do tempo de ramp-up inicial de 60 para 25 dias e aumento da satisfação dos novos colaboradores no período de experiência.</p>
+        </div>
+      `
+    },
+    atendimento: {
+      title: "Case 03: Atendimento ao Cliente & Resolução de Conflitos",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>Crescimento do número de reclamações não resolvidas no primeiro contato e queda no indicador de CSAT/NPS devido à postura defensiva dos atendentes.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Falta de prática em escuta ativa e em técnicas de desescalada de conflitos. O objetivo foi capacitar a equipe a aplicar a comunicação empática em situações de alta pressão.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Simulador de diálogos ramificados, onde cada escolha de fala do atendente impacta diretamente a atitude do cliente fictício, exigindo ajustes de postura em tempo real.</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Aumento da taxa de resolução no primeiro contato (FCR) e melhoria nas notas de avaliação do atendimento prestado.</p>
+        </div>
+      `
+    },
+    lideranca: {
+      title: "Case 04: Liderança & Gestão de Feedback Contínuo",
+      link: "#",
+      content: `
+        <div class="case-step">
+          <span class="case-step-num">Passo 01</span>
+          <h3>Problema de Negócio</h3>
+          <p>Alto índice de turnover em equipes operacionais associado à insatisfação com a liderança imediata e ausência de orientação clara sobre o desempenho.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 02</span>
+          <h3>Diagnóstico & Objetivo</h3>
+          <p>Líderes encaravam o feedback apenas como um rito formal anual, acumulando insatisfações sem tratá-las na rotina. O objetivo foi institucionalizar a cultura de feedback contínuo.</p>
+        </div>
+        <div class="case-step">
+          <span class="case-step-num">Passo 03</span>
+          <h3>Solução Instrucional</h3>
+          <p>Trilha com estudos de caso práticos, roteiros estruturados de conversas difíceis e simulação interativa de estruturação de Planos de Desenvolvimento Individual (PDI).</p>
+        </div>
+        <div class="result-box">
+          <h3>Resultado Esperado</h3>
+          <p>Redução da rotatividade voluntária, aumento do engajamento nas pesquisas de clima e melhoria na clareza das metas individuais.</p>
+        </div>
+      `
+    }
+  };
+
+  function openModal(caseKey) {
+    const data = casesData[caseKey];
+    if (data) {
+      document.getElementById('modalTitle').innerText = data.title;
+      
+      const actionButtonHtml = `
+        ${data.content}
+        <div class="modal-actions">
+          <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Acessar Projeto na Prática <i data-lucide="external-link"></i>
+          </a>
+          <button class="btn btn-secondary" onclick="closeModal()">Fechar</button>
+        </div>
+      `;
+      
+      document.getElementById('modalBody').innerHTML = actionButtonHtml;
+      document.getElementById('caseModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lucide.createIcons();
+    }
+  }
+
+  function closeModal() {
+    document.getElementById('caseModal').classList.remove('open');
+    document.body.style.overflow = 'auto';
+  }
+
+  window.addEventListener('click', (e) => {
+    const modal = document.getElementById('caseModal');
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>
+</body>
+</html>
